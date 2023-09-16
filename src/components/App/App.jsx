@@ -7,6 +7,7 @@ import './App.css';
 import Feeling from '../Feeling/feeling';
 import Understanding from '../Understanding/Understanding';
 import Support from '../Support/Support';
+import Comments from '../Comments/Comments'
 
 // React + redux imports
 import { useDispatch } from 'react-redux';
