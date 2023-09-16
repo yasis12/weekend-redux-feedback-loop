@@ -1,7 +1,20 @@
 import './feeling.css'
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useState } from 'react';
 
 function feeling () {
 
+    const dispatch = useDispatch();
+    const [newFeelings, setNewFeelings] = useState('');
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        dispatch({
+            type: 'SET_FEELINGS',
+            payload: newFeelings
+        })
+    };
 
     return (
         <div>
@@ -11,11 +24,13 @@ function feeling () {
             
             <br />
             <h3>How are you felling today?</h3>
-        <form className="feelingForm">
-            <input type="number" min="0" max="5" placeholder="Rating 1-5" />
+        <form className="feelingForm" onSubmit={handleSubmit}>
+            <input type="number" min="0" max="5" placeholder="Rating 1-5" onChange={event => setNewFeelings(event.target.value)}/>
+            <br /> <br />
+            <button type="submit">Next</button>
         </form>
         <br />
-        <button>Next</button>
+       
         </div>
     )
 }
