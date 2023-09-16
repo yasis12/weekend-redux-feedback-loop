@@ -5,6 +5,8 @@ import './App.css';
 
 // Components
 import Feeling from '../Feeling/feeling';
+import Understanding from '../Understanding/Understanding';
+import Support from '../Support/Support';
 
 // React + redux imports
 import { useDispatch } from 'react-redux';
@@ -20,6 +22,8 @@ function App() {
       </header>
       <body>
         <Feeling />
+        <Understanding />
+        <Support />
       </body>
     </div>
   );
