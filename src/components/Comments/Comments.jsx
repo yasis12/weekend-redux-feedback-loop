@@ -2,6 +2,7 @@ import './Comments.css'
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function Comments () {
     const dispatch = useDispatch();
@@ -26,6 +27,7 @@ function Comments () {
         <form className="commentFrom" onSubmit={handleSubmit}>
             <input type="text" placeholder="Comment" onChange={event => setNewFeelings(event.target.value)}/>
             <br /> <br />
+            <Link to="/"> NEXT </Link>
         </form>
         <br />
        

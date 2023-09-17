@@ -2,6 +2,7 @@ import './feeling.css'
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function feeling () {
 
@@ -18,18 +19,18 @@ function feeling () {
 
     return (
         <div>
-            <div className='pageNumberContainer'>
-                <h4 className='pageNumber'>1 of 4 pages</h4>
-            </div>
-            
+                <div className='pageNumberContainer'>
+                    <h4 className='pageNumber'>1 of 4 pages</h4>
+                </div>
+                
+                <br />
+                <h3>How are you feeling today?</h3>
+            <form className="feelingForm" onSubmit={handleSubmit}>
+                <input type="number" min="0" max="5" placeholder="Rating 1-5" onChange={event => setNewFeelings(event.target.value)}/>
+                <br /> <br />
+                <Link to="/2"> NEXT </Link>
+            </form>
             <br />
-            <h3>How are you feeling today?</h3>
-        <form className="feelingForm" onSubmit={handleSubmit}>
-            <input type="number" min="0" max="5" placeholder="Rating 1-5" onChange={event => setNewFeelings(event.target.value)}/>
-            <br /> <br />
-        </form>
-        <br />
-       
         </div>
     )
 }

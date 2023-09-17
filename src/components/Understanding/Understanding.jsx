@@ -2,6 +2,7 @@ import './Understanding.css'
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function Understanding () {
     const dispatch = useDispatch();
@@ -26,6 +27,7 @@ function Understanding () {
         <form className="understandingForm" onSubmit={handleSubmit}>
             <input type="number" min="0" max="5" placeholder="Rating 1-5" onChange={event => setNewUnderstanding(event.target.value)}/>
             <br /> <br />
+            <Link to="/3"> NEXT </Link>
         </form>
         <br />
        

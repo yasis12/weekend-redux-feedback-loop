@@ -38,14 +38,6 @@ function App() {
               <Route path="/4" exact>
                 <Comments />
               </Route>
-
-              <Link to="/"> NEXT FEELING</Link>
-              <br />
-              <Link to="/2"> NEXT Understanding</Link>
-              <br />
-              <Link to="/3">NEXT Support</Link>
-              <br />
-              <Link to="/4">NEXT Comments</Link>
             </body>
           </div>
           </Router> {/* End Router */}
