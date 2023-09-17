@@ -1,7 +1,35 @@
+import './Support.css'
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useState } from 'react';
 
 function Support () {
+    const dispatch = useDispatch();
+    const [newSupport, setNewSupport] = useState('');
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        dispatch({
+            type: 'SET_SUPPORT',
+            payload: newSupport
+        })
+    };
+
     return (
-        <h1>SUPPORT</h1>
+        <div>
+            <div className='pageNumberContainer'>
+                <h4 className='pageNumber'>3 of 4 pages</h4>
+            </div>
+            
+            <br />
+            <h3>How are well are you being supported?</h3>
+        <form className="supportForm" onSubmit={handleSubmit}>
+            <input type="number" min="0" max="5" placeholder="Rating 1-5" onChange={event => setNewUnderstanding(event.target.value)}/>
+            <br /> <br />
+        </form>
+        <br />
+       
+        </div>
     )
 }
 

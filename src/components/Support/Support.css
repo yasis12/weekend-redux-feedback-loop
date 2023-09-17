@@ -1,0 +1,21 @@
+
+.supportForm input {
+    width: 150px;
+}
+
+.pageNumber {
+    color: blue;
+}
+
+.pageNumberContainer {
+    display: inline-block; 
+    margin-bottom: 1px; 
+}
+
+.pageNumberContainer::after {
+    content: ""; 
+    display: block;
+    width: 200px; 
+    border-bottom: 5px solid blue; 
+    margin-top: 0px; /* Adjust the spacing between the text and the line */
+}

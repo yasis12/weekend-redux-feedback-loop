@@ -23,11 +23,10 @@ function feeling () {
             </div>
             
             <br />
-            <h3>How are you felling today?</h3>
+            <h3>How are you feeling today?</h3>
         <form className="feelingForm" onSubmit={handleSubmit}>
             <input type="number" min="0" max="5" placeholder="Rating 1-5" onChange={event => setNewFeelings(event.target.value)}/>
             <br /> <br />
-            <button type="submit">Next</button>
         </form>
         <br />
        
