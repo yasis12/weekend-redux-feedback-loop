@@ -10,6 +10,7 @@ import Support from '../Support/Support';
 import Comments from '../Comments/Comments'
 import Admin from '../Admin/Admin';
 import Review from '../Review/Review';
+import EndFeedback from '../EndFeedback/EndFeedback';
 // React + redux imports
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
@@ -45,6 +46,9 @@ function App() {
               </Route>
               <Route path="/5" exact>
                 <Review />
+              </Route>
+              <Route path="/6" exact>
+                <EndFeedback />
               </Route>
             </body>
           </div>
