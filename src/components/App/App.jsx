@@ -8,6 +8,8 @@ import Feeling from '../Feeling/feeling';
 import Understanding from '../Understanding/Understanding';
 import Support from '../Support/Support';
 import Comments from '../Comments/Comments'
+import Admin from '../Admin/Admin';
+import Review from '../Review/Review';
 // React + redux imports
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
@@ -37,6 +39,12 @@ function App() {
               </Route>
               <Route path="/4" exact>
                 <Comments />
+              </Route>
+              <Route path="/Admin" exact>
+                <Admin />
+              </Route>
+              <Route path="/5" exact>
+                <Review />
               </Route>
             </body>
           </div>

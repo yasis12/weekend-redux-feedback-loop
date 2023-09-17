@@ -27,7 +27,9 @@ function Comments () {
         <form className="commentFrom" onSubmit={handleSubmit}>
             <input type="text" placeholder="Comment" onChange={event => setNewFeelings(event.target.value)}/>
             <br /> <br />
-            <Link to="/"> NEXT </Link>
+            <Link to="/"> Back to Start </Link>
+            <br /> <br />
+            <Link to="/5"> NEXT </Link>
         </form>
         <br />
        
