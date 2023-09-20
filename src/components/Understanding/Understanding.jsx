@@ -1,10 +1,12 @@
 import './Understanding.css'
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 function Understanding () {
+
+    const history = useHistory();
     const dispatch = useDispatch();
     const [newUnderstanding, setNewUnderstanding] = useState('');
 
@@ -14,6 +16,7 @@ function Understanding () {
             type: 'SET_UNDERSTANDING',
             payload: newUnderstanding
         })
+        history.push('/3');
     };
 
     return (
@@ -27,7 +30,7 @@ function Understanding () {
         <form className="understandingForm" onSubmit={handleSubmit}>
             <input type="number" min="0" max="5" placeholder="Rating 1-5" onChange={event => setNewUnderstanding(event.target.value)}/>
             <br /> <br />
-            <Link to="/3"> NEXT </Link>
+            <button type='submit'>Next</button>
         </form>
         <br />
        
