@@ -1,10 +1,12 @@
 import './Comments.css'
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 function Comments () {
+
+    const history = useHistory();
     const dispatch = useDispatch();
     const [newComment, setNewComment] = useState('');
 
@@ -14,6 +16,7 @@ function Comments () {
             type: 'SET_COMMENTS',
             payload: newComment
         })
+        history.push('/5');
     };
 
     return (
@@ -25,11 +28,11 @@ function Comments () {
             <br />
             <h3>How are you feeling today?</h3>
         <form className="commentFrom" onSubmit={handleSubmit}>
-            <input type="text" placeholder="Comment" onChange={event => setNewFeelings(event.target.value)}/>
+            <input type="text" placeholder="Comment" onChange={event => setNewComment(event.target.value)}/>
             <br /> <br />
             <Link to="/"> Back to Start </Link>
             <br /> <br />
-            <Link to="/5"> NEXT </Link>
+            <button type='submit'>Next</button>
         </form>
         <br />
        
