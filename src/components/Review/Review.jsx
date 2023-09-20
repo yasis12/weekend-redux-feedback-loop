@@ -1,6 +1,7 @@
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import './Review.css';
 import { useSelector } from 'react-redux';
+import axios from 'axios';
 
 function Review () {
 
@@ -9,6 +10,24 @@ function Review () {
     const support = useSelector(store => store.support);
     const comments = useSelector(store => store.comments);
     
+    const history = useHistory();
+
+    const handleSubmit = () => {
+        const formData = {
+            feelings,
+            understanding,
+            support,
+            comments
+        };
+        axios.post('/submit-feedback', formData)
+        .then(response => {
+            console.log(`data submitted successfully`);
+            history.push('/6')
+        }).catch(error => {
+            console.log('Error submitting data', error);
+        });
+    };
+
     return (
         <div className="ReviewDiv">
             <h1>Review Your Feedback!</h1>
@@ -16,8 +35,9 @@ function Review () {
             <h3>Understanding: {understanding} </h3>
             <h3>Support: {support}</h3>
             <h3>Comments: {comments}</h3>
+            <br />
+            <button onClick={handleSubmit}>Submit</button>
 
-            <Link to="/6"> Submit </Link>
 
         </div>
     )

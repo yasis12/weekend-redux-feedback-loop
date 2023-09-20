@@ -6,7 +6,8 @@ function EndFeedback () {
         <div>
             <h1>Thank You for your Feedback!</h1>
             <br /> <br />
-            <Link to="/"> Leave New Feedbackls </Link>
+            <h3> Would you like to leave new feedback? </h3>
+            <Link to="/"> Yes </Link>
         </div>
         
     )
