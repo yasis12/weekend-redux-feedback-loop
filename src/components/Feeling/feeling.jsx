@@ -2,10 +2,11 @@ import './feeling.css'
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 function feeling () {
 
+    const history = useHistory();
     const dispatch = useDispatch();
     const [newFeelings, setNewFeelings] = useState('');
 
@@ -15,6 +16,7 @@ function feeling () {
             type: 'SET_FEELINGS',
             payload: newFeelings
         })
+        history.push('/2');
     };
 
     return (
@@ -28,7 +30,7 @@ function feeling () {
             <form className="feelingForm" onSubmit={handleSubmit}>
                 <input type="number" min="0" max="5" placeholder="Rating 1-5" onChange={event => setNewFeelings(event.target.value)}/>
                 <br /> <br />
-                <Link to="/2"> NEXT </Link>
+                <button type='submit'>Next</button>
             </form>
             <br />
         </div>
